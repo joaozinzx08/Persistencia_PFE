@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GeoLocal | Mini GPS</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <div class="logo-icon">⌖</div>
+
+            <div>
+                <h1>GeoLocal</h1>
+                <p>Mini GPS em tempo real</p>
+            </div>
+        </div>
+
+        <div class="gps-status-topo">
+            <span></span>
+            GPS disponível
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <span class="tag">
+                GEOLOCALIZAÇÃO
+            </span>
+
+            <h2>
+                Veja sua localização no mapa
+            </h2>
+
+            <p>
+                Use o GPS do dispositivo para localizar sua posição,
+                salvar as coordenadas e acompanhar sua localização em tempo real.
+            </p>
+
+        </section>
+
+
+        <section class="map-container">
+
+            <div id="map"></div>
+
+
+            <div class="gps-card">
+
+                <div class="gps-card-header">
+
+                    <div>
+                        <span class="mini-label">
+                            POSIÇÃO ATUAL
+                        </span>
+
+                        <h3>
+                            Seu GPS
+                        </h3>
+                    </div>
+
+                    <div class="gps-icon">
+                        ◎
+                    </div>
+
+                </div>
+
+
+                <div class="coordenadas">
+
+                    <div class="coordenada">
+
+                        <small>
+                            LATITUDE
+                        </small>
+
+                        <strong id="latitude">
+                            ---
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coordenada">
+
+                        <small>
+                            LONGITUDE
+                        </small>
+
+                        <strong id="longitude">
+                            ---
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="btnLocalizacao"
+                    class="btn-principal"
+                >
+                    <span>⌖</span>
+                    Usar minha localização
+                </button>
+
+
+                <button
+                    id="btnTempoReal"
+                    class="btn-tempo-real"
+                >
+                    <span>●</span>
+                    Ativar localização em tempo real
+                </button>
+
+
+                <p
+                    id="statusGps"
+                    class="status-gps"
+                >
+                    Clique em um dos botões para iniciar.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="ultima-localizacao">
+
+            <div>
+
+                <span class="tag">
+                    LOCALSTORAGE
+                </span>
+
+                <h2>
+                    Última localização salva
+                </h2>
+
+                <p id="ultimaLocalizacao">
+                    Nenhuma localização salva.
+                </p>
+
+            </div>
+
+
+            <div class="storage-info">
+
+                <div class="storage-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <strong>
+                        Persistência ativa
+                    </strong>
+
+                    <p>
+                        Sua última localização continua salva mesmo
+                        depois de atualizar a página.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="delete-section">
+
+            <div class="delete-text">
+
+                <span class="tag tag-vermelha">
+                    DRAG AND DROP
+                </span>
+
+                <h2>
+                    Apagar localização salva
+                </h2>
+
+                <p>
+                    Arraste o papel até a lixeira para remover
+                    latitude e longitude armazenadas no navegador.
+                </p>
+
+            </div>
+
+
+            <div class="drag-area">
+
+                <div
+                    id="papel"
+                    class="papel"
+                    draggable="true"
+                >
+
+                    <span class="emoji">
+                        📄
+                    </span>
+
+                    <strong>
+                        Localização
+                    </strong>
+
+                    <span class="texto-pequeno">
+                        Arraste
+                    </span>
+
+                </div>
+
+
+                <div class="setas">
+                    → → →
+                </div>
+
+
+                <div
+                    id="lixeira"
+                    class="lixeira"
+                >
+
+                    <span class="emoji">
+                        🗑️
+                    </span>
+
+                    <strong>
+                        Lixeira
+                    </strong>
+
+                    <span class="texto-pequeno">
+                        Solte aqui
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        Persistencia_PFE • Geolocation API • Leaflet • localStorage • Drag and Drop
+
+    </footer>
+
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
